@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.bestuniversities.presenter.screen.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_universitiesScreen"
+            app:destination="@id/universitiesScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoScreen"
+        android:name="com.example.bestuniversities.presenter.screen.InfoScreen"
+        android:label="InfoScreen" />
+    <fragment
+        android:id="@+id/universitiesScreen"
+        android:name="com.example.bestuniversities.presenter.screen.UniversitiesScreen"
+        android:label="UniversitiesScreen" >
+        <action
+            android:id="@+id/action_universitiesScreen_to_universityInfoScreen"
+            app:destination="@id/universityInfoScreen" />
+        <action
+            android:id="@+id/action_universitiesScreen_to_infoScreen"
+            app:destination="@id/infoScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/universityInfoScreen"
+        android:name="com.example.bestuniversities.presenter.screen.UniversityInfoScreen"
+        android:label="UniversityInfoScreen" >
+        <argument
+            android:name="image"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="definition"
+            app:argType="integer" />
+    </fragment>
+</navigation>
